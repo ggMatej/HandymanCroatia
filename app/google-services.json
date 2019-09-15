@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "751899180915",
+    "firebase_url": "https://handyman-croatia-390a6.firebaseio.com",
+    "project_id": "handyman-croatia-390a6",
+    "storage_bucket": "handyman-croatia-390a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751899180915:android:deda360f4ae37699904f06",
+        "android_client_info": {
+          "package_name": "hr.ferit.matejmijic.handymancroatia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751899180915-mc17bm9390o19chl8qneuvgicg1j3dnp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hr.ferit.matejmijic.handymancroatia",
+            "certificate_hash": "3697748dbc533105d8f33f2fe0257f6c81308bbf"
+          }
+        },
+        {
+          "client_id": "751899180915-27o4ef3hvi858g7d1hbb1an7d0m8agkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA83mu28wuKFyx1w0oCjN0WV-EWCMeC5b8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751899180915-27o4ef3hvi858g7d1hbb1an7d0m8agkd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

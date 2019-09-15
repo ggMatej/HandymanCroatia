@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Handyman Croatia</string>
+    <string name="email_input_hint">Email</string>
+    <string name="password_input_hint">Password</string>
+    <string name="login_button_text">Login</string>
+    <string name="no_account_text">Don\'t have an account?</string>
+    <string name="register_label">Register</string>
+    <string name="already_registered">Already registered?</string>
+    <string name="feed_placeholder_text">TEST</string>
+    <string name="hint_nickname">Nickname</string>
+    <string name="text_nickname">Enter your nickname:</string>
+    <string name="btn_next"><![CDATA[Next >]]></string>
+    <string name="btn_back"><![CDATA[< Back]]></string>
+    <string name="text_email">Enter your mail:</string>
+    <string name="hint_email">Email</string>
+    <string name="text_password">Enter your password:</string>
+    <string name="hint_password">Password</string>
+    <string name="text_phonenum">Your phone number:</string>
+    <string name="hint_phonenum">Phone number</string>
+    <string name="btn_createacc">CREATE ACCOUNT</string>
+    <string name="text_account_type">Select your account type:</string>
+    <string name="rb_business">Business</string>
+    <string name="rb_default">Default</string>
+    <string name="trackLocationActionText">Track location</string>
+    <string name="locationDisplayTextDefault">No location</string>
+    
+    <string name="google_map_api_key">AIzaSyCweSTmhy5V05OmXnRE-QLvuc-hASp0jA0</string>
+    <string name="btn_add_location">Add Location</string>
+</resources>
