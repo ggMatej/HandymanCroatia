@@ -26,4 +26,6 @@
     
     <string name="google_map_api_key">AIzaSyCweSTmhy5V05OmXnRE-QLvuc-hASp0jA0</string>
     <string name="btn_add_location">Add Location</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_profile">Profile</string>
 </resources>

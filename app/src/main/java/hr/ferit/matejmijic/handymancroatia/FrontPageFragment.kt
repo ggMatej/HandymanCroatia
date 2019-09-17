@@ -1,5 +1,6 @@
 package hr.ferit.matejmijic.handymancroatia
 
+import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import hr.ferit.matejmijic.handymancroatia.common.showFragment
 import hr.ferit.matejmijic.handymancroatia.ui.auth.LoginFragment
@@ -12,12 +13,9 @@ class FrontPageFragment: BaseFragment() {
     override fun getLayoutResourceId(): Int = R.layout.fragment_front_page
 
     override fun initUi() {
-        auth = FirebaseAuth.getInstance()
-        logout.setOnClickListener {
-            auth.signOut()
-            activity?.showFragment(R.id.fragmentContainer, LoginFragment(), false)
-        }
-
-        textView.text = auth.currentUser?.email
     }
+
+
+
+
 }

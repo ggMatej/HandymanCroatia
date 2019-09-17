@@ -21,6 +21,7 @@ object CreateAccPrefs {
 
     fun getString(key: String, defaultValue: String): String? {
         return sharedPrefs().getString(key, defaultValue)
+
     }
 
     fun removeAll(){
