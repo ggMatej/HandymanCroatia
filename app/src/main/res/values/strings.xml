@@ -49,4 +49,17 @@
     <string name="send_offer">Send offer</string>
     <string name="tab_business_details">Details</string>
     <string name="tab_business_rating">Rating</string>
+    <string name="no_rating">No rating</string>
+    <string name="add_review">Add review</string>
+
+    <string name="grade_prompt">Choose a grade</string>
+    <string name="post_review">Post review</string>
+    <string name="reviews">Reviews:</string>
+    <string-array name="grades">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 </resources>

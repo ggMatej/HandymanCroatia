@@ -1,10 +1,9 @@
-package hr.ferit.matejmijic.handymancroatia.ui.home
+package hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc.viewpager
 
 import android.os.Bundle
 import hr.ferit.matejmijic.handymancroatia.R
 import hr.ferit.matejmijic.handymancroatia.ui.base.BaseFragment
 import hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc.EXTRA_USER_ID
-import hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc.PagerAdapter
 import kotlinx.android.synthetic.main.fragment_view_pager.*
 
 class ViewPagerFragment: BaseFragment() {
@@ -14,7 +13,12 @@ class ViewPagerFragment: BaseFragment() {
 
     override fun initUi() {
         arguments?.getString(EXTRA_USER_ID)?.let { businessUserId = it }
-        viewPager.adapter = PagerAdapter(childFragmentManager, context!!, businessUserId)
+        viewPager.adapter =
+            PagerAdapter(
+                childFragmentManager,
+                context!!,
+                businessUserId
+            )
         tabs.setupWithViewPager(viewPager)
     }
 
@@ -22,7 +26,8 @@ class ViewPagerFragment: BaseFragment() {
     companion object{
         fun newInstance(uId: String): ViewPagerFragment {
             val bundle = Bundle().apply { putString(EXTRA_USER_ID, uId) }
-            return ViewPagerFragment().apply { arguments = bundle }
+            return ViewPagerFragment()
+                .apply { arguments = bundle }
         }
     }
 }

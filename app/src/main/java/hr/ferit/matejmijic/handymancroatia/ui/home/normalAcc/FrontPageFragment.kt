@@ -9,6 +9,8 @@ import hr.ferit.matejmijic.handymancroatia.R
 import hr.ferit.matejmijic.handymancroatia.model.BusinessUser
 import hr.ferit.matejmijic.handymancroatia.persistence.BusinessUserRepo
 import hr.ferit.matejmijic.handymancroatia.ui.base.BaseFragment
+import hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc.recyclerview.FrontPageAdapter
+import hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc.viewpager.ContainerActivity
 import kotlinx.android.synthetic.main.fragment_front_page.*
 
 const val EXTRA_USER_ID = "extra_task_id"
@@ -18,7 +20,13 @@ class FrontPageFragment: BaseFragment() {
     private lateinit var db: FirebaseFirestore
 
     private val repository = BusinessUserRepo
-    private val adapter by lazy { FrontPageAdapter{ onItemSelected(it) }}
+    private val adapter by lazy {
+        FrontPageAdapter {
+            onItemSelected(
+                it
+            )
+        }
+    }
 
     private fun onItemSelected(businessUser: BusinessUser) {
         val detailsIntent = Intent(context, ContainerActivity::class.java).apply {
@@ -56,7 +64,8 @@ class FrontPageFragment: BaseFragment() {
     companion object{
         fun newInstance(uId: String): FrontPageFragment {
             val bundle = Bundle().apply { putString(EXTRA_USER_ID, uId) }
-            return FrontPageFragment().apply { arguments = bundle }
+            return FrontPageFragment()
+                .apply { arguments = bundle }
         }
     }
 

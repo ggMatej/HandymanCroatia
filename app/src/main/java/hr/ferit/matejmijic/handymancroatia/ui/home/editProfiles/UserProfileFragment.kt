@@ -1,4 +1,4 @@
-package hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc
+package hr.ferit.matejmijic.handymancroatia.ui.home.editProfiles
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -18,8 +18,6 @@ import hr.ferit.matejmijic.handymancroatia.common.showFragment
 import hr.ferit.matejmijic.handymancroatia.persistence.CreateAccPrefs
 import hr.ferit.matejmijic.handymancroatia.ui.main.MainActivity
 import hr.ferit.matejmijic.handymancroatia.ui.base.BaseFragment
-import hr.ferit.matejmijic.handymancroatia.ui.home.editProfiles.EditProfileFragmentDialog
-import hr.ferit.matejmijic.handymancroatia.ui.home.editProfiles.ProfileUpdatedListener
 import kotlinx.android.synthetic.main.fragment_user_profile.*
 
 class UserProfileFragment: BaseFragment(),

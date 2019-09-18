@@ -7,6 +7,7 @@ import hr.ferit.matejmijic.handymancroatia.common.showFragment
 import hr.ferit.matejmijic.handymancroatia.model.NormalUser
 import hr.ferit.matejmijic.handymancroatia.persistence.CreateAccPrefs
 import hr.ferit.matejmijic.handymancroatia.ui.base.BaseActivity
+import hr.ferit.matejmijic.handymancroatia.ui.home.editProfiles.UserProfileFragment
 import kotlinx.android.synthetic.main.activity_main_page.*
 
 class MainPageActivity: BaseActivity() {

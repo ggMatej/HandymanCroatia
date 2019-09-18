@@ -20,8 +20,6 @@ import kotlinx.android.synthetic.main.fragment_business_user_profile.tv_location
 import kotlinx.android.synthetic.main.fragment_business_user_profile.tv_phonenum
 import kotlinx.android.synthetic.main.fragment_business_user_profile.tv_territory
 import kotlinx.android.synthetic.main.fragment_createacc_location.tv_nickname
-import kotlinx.android.synthetic.main.item_user.*
-import kotlinx.android.synthetic.main.item_user.view.*
 
 class BusinessDetailFragment: BaseFragment() {
 
@@ -103,7 +101,8 @@ class BusinessDetailFragment: BaseFragment() {
     companion object{
         fun newInstance(uId: String): BusinessDetailFragment {
             val bundle = Bundle().apply { putString(EXTRA_USER_ID, uId) }
-            return BusinessDetailFragment().apply { arguments = bundle }
+            return BusinessDetailFragment()
+                .apply { arguments = bundle }
         }
     }
 }

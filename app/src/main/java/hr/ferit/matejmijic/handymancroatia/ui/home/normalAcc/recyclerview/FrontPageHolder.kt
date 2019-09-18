@@ -1,4 +1,4 @@
-package hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc
+package hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc.recyclerview
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

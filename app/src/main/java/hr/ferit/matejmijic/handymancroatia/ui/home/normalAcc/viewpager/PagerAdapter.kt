@@ -1,11 +1,13 @@
-package hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc
+package hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc.viewpager
 
 import android.content.Context
-import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import hr.ferit.matejmijic.handymancroatia.R
+import hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc.BusinessDetailFragment
+import hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc.BusinessRatingFragment
+import hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc.FrontPageFragment
 
 class PagerAdapter(fm: FragmentManager, context: Context,id: String): FragmentPagerAdapter(fm) {
 
@@ -14,9 +16,15 @@ class PagerAdapter(fm: FragmentManager, context: Context,id: String): FragmentPa
 
     override fun getItem(position: Int): Fragment {
         return when(position){
-            0 -> BusinessDetailFragment.newInstance(id)
-            1 -> BusinessRatingFragment.newInstance(id)
-            else -> FrontPageFragment.newInstance(id)
+            0 -> BusinessDetailFragment.newInstance(
+                id
+            )
+            1 -> BusinessRatingFragment.newInstance(
+                id
+            )
+            else -> FrontPageFragment.newInstance(
+                id
+            )
         }
     }
 
