@@ -1,18 +1,16 @@
 package hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc
 
 import android.content.Intent
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import hr.ferit.matejmijic.handymancroatia.HandymanApp
 import hr.ferit.matejmijic.handymancroatia.R
 import hr.ferit.matejmijic.handymancroatia.model.BusinessUser
 import hr.ferit.matejmijic.handymancroatia.persistence.BusinessUserRepo
 import hr.ferit.matejmijic.handymancroatia.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_front_page.*
 
-const val EXTRA_TASK_ID = "extra_task_id"
+const val EXTRA_USER_ID = "extra_task_id"
 
 class FrontPageFragment: BaseFragment() {
     private lateinit var  auth: FirebaseAuth
@@ -23,7 +21,7 @@ class FrontPageFragment: BaseFragment() {
 
     private fun onItemSelected(businessUser: BusinessUser) {
         val detailsIntent = Intent(context, ContainerActivity::class.java).apply {
-            putExtra(EXTRA_TASK_ID, businessUser.userId)
+            putExtra(EXTRA_USER_ID, businessUser.userId)
         }
         startActivity(detailsIntent)
     }

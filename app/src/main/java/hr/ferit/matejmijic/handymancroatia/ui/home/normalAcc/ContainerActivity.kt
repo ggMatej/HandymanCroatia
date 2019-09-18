@@ -9,7 +9,7 @@ class ContainerActivity: BaseActivity() {
 
 
     override fun initUi() {
-        val id = intent.getStringExtra(EXTRA_TASK_ID)
+        val id = intent.getStringExtra(EXTRA_USER_ID)
         showFragment(R.id.fragmentContainer, BusinessDetailFragment.newInstance(id), false)
     }
 }
