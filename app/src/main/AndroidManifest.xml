@@ -26,6 +26,7 @@
         </activity>
         <activity android:name=".ui.home.normalAcc.MainPageActivity" />
         <activity android:name=".ui.home.businessAcc.MainPageBusinessActivity" />
+        <activity android:name=".ui.home.normalAcc.ContainerActivity" />
     </application>
 
 </manifest>

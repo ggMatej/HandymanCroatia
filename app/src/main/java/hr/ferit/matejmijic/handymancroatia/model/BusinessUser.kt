@@ -3,6 +3,7 @@ package hr.ferit.matejmijic.handymancroatia.model
 import hr.ferit.matejmijic.handymancroatia.ui.auth.CreateAccWorkTerritory
 
 data class BusinessUser(
+    var id: Int = 0,
     val userId: String? = null,
     val email: String? = null,
     val nickname: String? = null,

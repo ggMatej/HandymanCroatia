@@ -79,6 +79,7 @@ class CreateAccLocation: BaseFragment(){
                         }
                         "business"->{
                             val businessUser = BusinessUser(
+                                0,
                                 auth.uid,
                                 CreateAccPrefs.getString(CreateAccPrefs.KEY_EMAIL,""),
                                 CreateAccPrefs.getString(CreateAccPrefs.KEY_NICKNAME,""),
