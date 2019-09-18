@@ -1,6 +1,7 @@
 package hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc
 
 import android.content.Intent
+import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -49,6 +50,13 @@ class FrontPageFragment: BaseFragment() {
                     repository.add(it)
                 }
             }
+        }
+    }
+
+    companion object{
+        fun newInstance(uId: String): FrontPageFragment {
+            val bundle = Bundle().apply { putString(EXTRA_USER_ID, uId) }
+            return FrontPageFragment().apply { arguments = bundle }
         }
     }
 

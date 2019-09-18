@@ -47,4 +47,6 @@
     <string name="work_teritory">Work teritory:</string>
     <string name="job">Job:</string>
     <string name="send_offer">Send offer</string>
+    <string name="tab_business_details">Details</string>
+    <string name="tab_business_rating">Rating</string>
 </resources>
