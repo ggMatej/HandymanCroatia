@@ -12,10 +12,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import hr.ferit.matejmijic.handymancroatia.HandymanApp
 import hr.ferit.matejmijic.handymancroatia.R
+import hr.ferit.matejmijic.handymancroatia.model.BusinessUser
 import hr.ferit.matejmijic.handymancroatia.model.NormalUser
 import hr.ferit.matejmijic.handymancroatia.persistence.CreateAccPrefs
-import hr.ferit.matejmijic.handymancroatia.ui.home.MainPageActivity
+import hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc.MainPageActivity
 import hr.ferit.matejmijic.handymancroatia.ui.base.BaseFragment
+import hr.ferit.matejmijic.handymancroatia.ui.home.businessAcc.MainPageBusinessActivity
 import kotlinx.android.synthetic.main.fragment_createacc_location.*
 import kotlinx.android.synthetic.main.fragment_createacc_location.btn_back
 
@@ -74,6 +76,27 @@ class CreateAccLocation: BaseFragment(){
                             startActivity(intent)
                             activity?.finish()
 
+                        }
+                        "business"->{
+                            val businessUser = BusinessUser(
+                                auth.uid,
+                                CreateAccPrefs.getString(CreateAccPrefs.KEY_EMAIL,""),
+                                CreateAccPrefs.getString(CreateAccPrefs.KEY_NICKNAME,""),
+                                CreateAccPrefs.getString(CreateAccPrefs.KEY_PHONENUM,""),
+                                CreateAccPrefs.getString(CreateAccPrefs.KEY_ACCOUNT_TYPE,""),
+                                CreateAccPrefs.getString(CreateAccPrefs.KEY_ACCOUNT_ADDRESS,""),
+                                CreateAccPrefs.getString(CreateAccPrefs.KEY_JOB_TYPE,""),
+                                CreateAccPrefs.getString(CreateAccPrefs.KEY_WORK_TERRITORY,"")
+                            )
+                            db.collection("businessUsers").document(businessUser.userId.toString()).set(businessUser)
+                            activity?.supportFragmentManager?.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+                            //activity?.showFragment(R.id.fragmentContainer, FrontPageFragment(), false)
+                            val intent = Intent(activity, MainPageBusinessActivity::class.java).apply {
+                                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            }
+                            startActivity(intent)
+                            activity?.finish()
                         }
                     }
 

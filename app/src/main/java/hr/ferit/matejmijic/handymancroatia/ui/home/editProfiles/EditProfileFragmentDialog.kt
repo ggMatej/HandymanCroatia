@@ -1,13 +1,10 @@
-package hr.ferit.matejmijic.handymancroatia.ui.home
+package hr.ferit.matejmijic.handymancroatia.ui.home.editProfiles
 
 import android.app.AlertDialog
-import android.content.ContentValues.TAG
-import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.text.TextUtils
 import android.text.TextUtils.isEmpty
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,13 +14,10 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import hr.ferit.matejmijic.handymancroatia.HandymanApp
 import hr.ferit.matejmijic.handymancroatia.R
-import hr.ferit.matejmijic.handymancroatia.common.isValidNickname
-import hr.ferit.matejmijic.handymancroatia.common.showFragment
 import hr.ferit.matejmijic.handymancroatia.persistence.CreateAccPrefs
 import kotlinx.android.synthetic.main.fragment_dialog_edit_profile.*
 
@@ -135,9 +129,16 @@ class EditProfileFragmentDialog: DialogFragment() {
                     hashMap["phoneNumber"] = phone
                     hashMap["location"] = location
 
-                    FirebaseFirestore.getInstance().collection("normalUsers").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).update(
-                        hashMap
-                    )
+                    if(CreateAccPrefs.getString(CreateAccPrefs.KEY_ACCOUNT_TYPE,"")=="default"){
+                        FirebaseFirestore.getInstance().collection("normalUsers").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).update(
+                            hashMap
+                        )
+                    } else {
+                        FirebaseFirestore.getInstance().collection("businessUsers").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).update(
+                            hashMap
+                        )
+                    }
+
 
                     CreateAccPrefs.store(CreateAccPrefs.KEY_EMAIL,email)
                     CreateAccPrefs.store(CreateAccPrefs.KEY_NICKNAME,nickname)
@@ -164,7 +165,8 @@ class EditProfileFragmentDialog: DialogFragment() {
             newNicknameInput.text) || TextUtils.isEmpty(newPhoneInput.text)
 
     companion object {
-        fun newInstance() = EditProfileFragmentDialog()
+        fun newInstance() =
+            EditProfileFragmentDialog()
     }
 
     override fun onRequestPermissionsResult(

@@ -43,4 +43,7 @@
     <string name="updateLocation">Update location</string>
     <string name="saveChanges">Save changes</string>
     <string name="oldPassword">Old password</string>
+    <string name="text_select_jobs">Select your jobs:</string>
+    <string name="work_teritory">Work teritory:</string>
+    <string name="job">Job:</string>
 </resources>

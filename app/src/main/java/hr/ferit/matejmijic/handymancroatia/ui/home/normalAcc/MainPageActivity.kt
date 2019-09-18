@@ -1,19 +1,13 @@
-package hr.ferit.matejmijic.handymancroatia.ui.home
+package hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc
 
-import android.content.Intent
-import android.view.Menu
-import android.view.MenuInflater
-import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import hr.ferit.matejmijic.handymancroatia.R
 import hr.ferit.matejmijic.handymancroatia.common.showFragment
 import hr.ferit.matejmijic.handymancroatia.model.NormalUser
 import hr.ferit.matejmijic.handymancroatia.persistence.CreateAccPrefs
-import hr.ferit.matejmijic.handymancroatia.ui.auth.MainActivity
 import hr.ferit.matejmijic.handymancroatia.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main_page.*
-import kotlinx.android.synthetic.main.fragment_user_profile.*
 
 class MainPageActivity: BaseActivity() {
     private lateinit var auth: FirebaseAuth
@@ -25,6 +19,7 @@ class MainPageActivity: BaseActivity() {
     override fun initUi() {
         getUser()
         setUpNavigationListener()
+
         showFragment(R.id.mainPageFragmentContainer,
             FrontPageFragment(), false)
 

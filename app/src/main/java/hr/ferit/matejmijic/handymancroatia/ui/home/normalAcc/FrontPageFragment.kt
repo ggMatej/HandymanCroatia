@@ -1,4 +1,4 @@
-package hr.ferit.matejmijic.handymancroatia.ui.home
+package hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc
 
 import com.google.firebase.auth.FirebaseAuth
 import hr.ferit.matejmijic.handymancroatia.R

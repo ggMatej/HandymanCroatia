@@ -1,4 +1,4 @@
-package hr.ferit.matejmijic.handymancroatia.ui.home
+package hr.ferit.matejmijic.handymancroatia.ui.home.businessAcc
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -15,22 +15,27 @@ import com.google.firebase.firestore.FirebaseFirestore
 import hr.ferit.matejmijic.handymancroatia.HandymanApp
 import hr.ferit.matejmijic.handymancroatia.R
 import hr.ferit.matejmijic.handymancroatia.common.showFragment
-import hr.ferit.matejmijic.handymancroatia.model.NormalUser
 import hr.ferit.matejmijic.handymancroatia.persistence.CreateAccPrefs
-import hr.ferit.matejmijic.handymancroatia.ui.auth.MainActivity
 import hr.ferit.matejmijic.handymancroatia.ui.base.BaseFragment
-import kotlinx.android.synthetic.main.fragment_user_profile.*
+import hr.ferit.matejmijic.handymancroatia.ui.home.editProfiles.EditProfileFragmentDialog
+import hr.ferit.matejmijic.handymancroatia.ui.home.editProfiles.ProfileUpdatedListener
+import hr.ferit.matejmijic.handymancroatia.ui.main.MainActivity
+import kotlinx.android.synthetic.main.fragment_business_user_profile.*
+import kotlinx.android.synthetic.main.fragment_user_profile.tv_accType
+import kotlinx.android.synthetic.main.fragment_user_profile.tv_email
+import kotlinx.android.synthetic.main.fragment_user_profile.tv_location
+import kotlinx.android.synthetic.main.fragment_user_profile.tv_nickname
+import kotlinx.android.synthetic.main.fragment_user_profile.tv_phonenum
 
-class UserProfileFragment: BaseFragment(), ProfileUpdatedListener {
-
+class BusinessUserProfileFragment: BaseFragment(),
+    ProfileUpdatedListener {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private val LOCATION_PERMISSION_CODE =1
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
 
-    override fun getLayoutResourceId(): Int =
-        R.layout.fragment_user_profile
 
+    override fun getLayoutResourceId(): Int = R.layout.fragment_business_user_profile
 
     override fun initUi() {
         val fusedLocationClient = LocationServices.getFusedLocationProviderClient(activity!!.applicationContext)
@@ -48,6 +53,8 @@ class UserProfileFragment: BaseFragment(), ProfileUpdatedListener {
         }
         tv_nickname.text = CreateAccPrefs.getString(CreateAccPrefs.KEY_NICKNAME,"")
         tv_phonenum.text = CreateAccPrefs.getString(CreateAccPrefs.KEY_PHONENUM,"")
+        tv_job.text = CreateAccPrefs.getString(CreateAccPrefs.KEY_JOB_TYPE,"")
+        tv_territory.text = CreateAccPrefs.getString(CreateAccPrefs.KEY_WORK_TERRITORY,"")
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -96,8 +103,9 @@ class UserProfileFragment: BaseFragment(), ProfileUpdatedListener {
                             location ->
                         Toast.makeText(HandymanApp.getAppContext(),"Location added", Toast.LENGTH_SHORT).show()
                         CreateAccPrefs.store(CreateAccPrefs.KEY_ACCOUNT_ADDRESS,"google.navigation:q=${location?.latitude},${location?.longitude}")
-                        activity?.showFragment(R.id.mainPageFragmentContainer,UserProfileFragment(),false)
-                        FirebaseFirestore.getInstance().collection("normalUsers").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).update(
+                        activity?.showFragment(R.id.mainPageFragmentContainer,
+                            BusinessUserProfileFragment(),false)
+                        FirebaseFirestore.getInstance().collection("businessUsers").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).update(
                             "location",CreateAccPrefs.getString(CreateAccPrefs.KEY_ACCOUNT_ADDRESS,""))
 
                     }
@@ -124,7 +132,8 @@ class UserProfileFragment: BaseFragment(), ProfileUpdatedListener {
                             location ->
                         Toast.makeText(HandymanApp.getAppContext(),"Location added",Toast.LENGTH_SHORT).show()
                         CreateAccPrefs.store(CreateAccPrefs.KEY_ACCOUNT_ADDRESS,"google.navigation:q=${location?.latitude},${location?.longitude}")
-                        activity?.showFragment(R.id.mainPageFragmentContainer,UserProfileFragment(),false)
+                        activity?.showFragment(R.id.mainPageFragmentContainer,
+                            BusinessUserProfileFragment(),false)
 
                     }
                 }
@@ -138,6 +147,4 @@ class UserProfileFragment: BaseFragment(), ProfileUpdatedListener {
     override fun onProfileChanged() {
         initUi()
     }
-
-
 }

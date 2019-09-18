@@ -1,6 +1,7 @@
 package hr.ferit.matejmijic.handymancroatia.ui.auth
 
 import android.widget.Toast
+import hr.ferit.matejmijic.handymancroatia.HandymanApp
 import hr.ferit.matejmijic.handymancroatia.R
 import hr.ferit.matejmijic.handymancroatia.common.showFragment
 import hr.ferit.matejmijic.handymancroatia.persistence.CreateAccPrefs
@@ -20,12 +21,17 @@ class CreateAccType: BaseFragment() {
 
         btn_next.setOnClickListener {
             when {
-                rb_business.isChecked -> Toast.makeText(context,"BUSSINESS NOT YET IMPLEMENTED!", Toast.LENGTH_SHORT).show()
+                rb_business.isChecked -> {
+                    CreateAccPrefs.store(CreateAccPrefs.KEY_ACCOUNT_TYPE,"business")
+                    activity?.showFragment(R.id.fragmentContainer,CreateAccSelectJobs(),true)
+                }
                 rb_default.isChecked -> {
                     CreateAccPrefs.store(CreateAccPrefs.KEY_ACCOUNT_TYPE,"default")
                     activity?.showFragment(R.id.fragmentContainer, CreateAccEmail(), true)
                 }
-                else -> Toast.makeText(context,"Choose your account type!", Toast.LENGTH_SHORT).show()
+                else -> {
+                    Toast.makeText(HandymanApp.getAppContext(), "Please choose account type!", Toast.LENGTH_LONG).show()
+                }
             }
         }
 

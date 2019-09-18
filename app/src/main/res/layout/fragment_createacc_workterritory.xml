@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tv_jobs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/text_select_jobs"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="38dp"
+        app:layout_constraintBottom_toTopOf="@+id/rg_jobType"/>
+
+
+
+
+        <RadioGroup
+            android:id="@+id/rg_jobType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/rb_zagrebacka"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="horizontal|vertical"
+            app:layout_constraintTop_toBottomOf="@+id/tv_jobs"
+            tools:layout_editor_absoluteX="32dp">
+
+            <RadioButton
+                android:id="@+id/rb_zagrebacka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zagrebačka županija" />
+
+
+            <RadioButton
+                android:id="@+id/rb_karlovacka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Karlovačka županija" />
+
+            <RadioButton
+                android:id="@+id/rb_varazdinska"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Varaždinska županija" />
+
+            <RadioButton
+                android:id="@+id/rb_osjecka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Osječko-baranjska županija" />
+
+
+            <RadioButton
+                android:id="@+id/rb_primorska"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Primorsko-goranska županija" />
+
+
+
+            <RadioButton
+                android:id="@+id/rb_pozeska"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Požeško-slavonska županija" />
+
+
+            <RadioButton
+                android:id="@+id/rb_splitksa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Splitsko-dalmatinska županija" />
+
+            <RadioButton
+                android:id="@+id/rb_istarska"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Istarska županija" />
+
+            <RadioButton
+                android:id="@+id/rb_zagreb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grad Zagreb" />
+
+            <RadioButton
+                android:id="@+id/rb_nedefinirano"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nedefinirano" />
+        </RadioGroup>
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorCreateAccBg"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="71dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/blue"
+            android:text="@string/btn_next"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_back"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:enabled="true"
+            android:text="@string/btn_back" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,8 @@ object CreateAccPrefs {
     const val KEY_PHONENUM = "KEY_PHONENUM"
     const val KEY_ACCOUNT_TYPE = "KEY_ACCOUNT_TYPE"
     const val KEY_ACCOUNT_ADDRESS = "KEY_ACCOUNT_ADDRESS"
+    const val KEY_JOB_TYPE = "KEY_JOB_TYPE"
+    const val KEY_WORK_TERRITORY = "KEY_WORK_TERRITORY"
 
 
     private fun sharedPrefs() = PreferenceManager.getDefaultSharedPreferences(HandymanApp.getAppContext())
@@ -21,8 +23,9 @@ object CreateAccPrefs {
 
     fun getString(key: String, defaultValue: String): String? {
         return sharedPrefs().getString(key, defaultValue)
-
     }
+
+
 
     fun removeAll(){
         sharedPrefs().edit().clear().apply()
