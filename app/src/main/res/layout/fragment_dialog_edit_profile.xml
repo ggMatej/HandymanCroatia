@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/marginLarge"
+    android:paddingEnd="@dimen/marginLarge"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/updateProfileHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:text="@string/updateProfileHeading"
+        android:textSize="30sp" />
+    <EditText
+        android:id="@+id/newEmailInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/newEmailInputHint"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:inputType="text"
+        tools:ignore="Autofill"/>
+
+    <EditText
+        android:id="@+id/newPasswordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/newPassword"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:inputType="textPassword"
+        tools:ignore="Autofill"/>
+
+    <EditText
+        android:id="@+id/newNicknameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/newNickname"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:inputType="text"
+        tools:ignore="Autofill"/>
+
+    <EditText
+        android:id="@+id/newPhoneInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/newPhone"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:inputType="number"
+        tools:ignore="Autofill"/>
+
+    <Button
+        android:id="@+id/updateLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginLarge"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:layout_gravity="center"
+        android:text="@string/updateLocation"/>
+
+    <Button
+        android:id="@+id/saveChanges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginLarge"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:layout_gravity="center"
+        android:text="@string/saveChanges"/>
+
+</LinearLayout>

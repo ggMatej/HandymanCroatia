@@ -10,13 +10,11 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import hr.ferit.matejmijic.handymancroatia.FrontPageFragment
 import hr.ferit.matejmijic.handymancroatia.HandymanApp
 import hr.ferit.matejmijic.handymancroatia.R
-import hr.ferit.matejmijic.handymancroatia.common.showFragment
 import hr.ferit.matejmijic.handymancroatia.model.NormalUser
 import hr.ferit.matejmijic.handymancroatia.persistence.CreateAccPrefs
-import hr.ferit.matejmijic.handymancroatia.ui.MainPageActivity
+import hr.ferit.matejmijic.handymancroatia.ui.home.MainPageActivity
 import hr.ferit.matejmijic.handymancroatia.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_createacc_location.*
 import kotlinx.android.synthetic.main.fragment_createacc_location.btn_back

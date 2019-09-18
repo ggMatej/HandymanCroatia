@@ -28,4 +28,19 @@
     <string name="btn_add_location">Add Location</string>
     <string name="nav_home">Home</string>
     <string name="nav_profile">Profile</string>
+    <string name="address_not_added">Address not added</string>
+    <string name="address_not_available">Not available</string>
+    <string name="address_available">Available</string>
+    <string name="edit_profile_menu">Edit profile</string>
+    <string name="add_location_menu">Add location</string>
+    <string name="menu_logout">Sign out</string>
+    <string name="updateEmail">Email</string>
+    <string name="updateProfileHeading">Edit profile:</string>
+    <string name="newEmailInputHint">New email</string>
+    <string name="newPassword">New password</string>
+    <string name="newNickname">New nickname</string>
+    <string name="newPhone">New phonenumber</string>
+    <string name="updateLocation">Update location</string>
+    <string name="saveChanges">Save changes</string>
+    <string name="oldPassword">Old password</string>
 </resources>

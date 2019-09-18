@@ -1,20 +1,12 @@
-package hr.ferit.matejmijic.handymancroatia.ui
+package hr.ferit.matejmijic.handymancroatia.ui.auth
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
-import hr.ferit.matejmijic.handymancroatia.FrontPageFragment
 import hr.ferit.matejmijic.handymancroatia.R
-import hr.ferit.matejmijic.handymancroatia.UserProfileFragment
-import hr.ferit.matejmijic.handymancroatia.common.hasPermissionCompat
 import hr.ferit.matejmijic.handymancroatia.common.showFragment
-import hr.ferit.matejmijic.handymancroatia.ui.auth.LoginFragment
 import hr.ferit.matejmijic.handymancroatia.ui.base.BaseActivity
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_front_page.*
+import hr.ferit.matejmijic.handymancroatia.ui.home.MainPageActivity
 
-const val EXTRA_UID = ""
 
 class MainActivity : BaseActivity() {
 

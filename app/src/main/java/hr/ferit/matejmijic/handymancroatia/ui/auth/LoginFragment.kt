@@ -1,22 +1,14 @@
 package hr.ferit.matejmijic.handymancroatia.ui.auth
 
-import android.content.ContentValues.TAG
 import android.content.Intent
-import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import hr.ferit.matejmijic.handymancroatia.FrontPageFragment
-import hr.ferit.matejmijic.handymancroatia.HandymanApp
 import hr.ferit.matejmijic.handymancroatia.R
 import hr.ferit.matejmijic.handymancroatia.common.showFragment
 import hr.ferit.matejmijic.handymancroatia.persistence.CreateAccPrefs
-import hr.ferit.matejmijic.handymancroatia.ui.EXTRA_UID
-import hr.ferit.matejmijic.handymancroatia.ui.MainPageActivity
+import hr.ferit.matejmijic.handymancroatia.ui.home.MainPageActivity
 import hr.ferit.matejmijic.handymancroatia.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_login.*
-import kotlin.math.log
-
-
 
 
 class LoginFragment: BaseFragment() {
@@ -51,6 +43,7 @@ class LoginFragment: BaseFragment() {
                                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                             }
+
                             startActivity(intent)
                             activity?.finish()
                         } else {
