@@ -25,7 +25,7 @@ class BusinessRatingFragment: BaseFragment() {
     private var businessUserId = "No user"
 
     private fun onItemSelected(review: UserReview) {
-
+        activity?.showFragment(R.id.fragmentContainer, ReviewFragment.newInstance(review.title.toString(), review.review.toString()), true)
     }
 
 
@@ -51,8 +51,16 @@ class BusinessRatingFragment: BaseFragment() {
         val businessUsers = db.collection("businessUsers").document(businessUserId).collection("reviews")
         businessUsers.get().addOnSuccessListener { it ->
             if (!it.isEmpty){
+                var count = 0
+                var rating = 0
                 val reviews = it.toObjects(UserReview::class.java)
                 adapter.setData(reviews)
+                reviews.forEach {
+                    count++
+                    rating += it.rating
+                }
+               tv_rating.text = (rating/count).toString()
+
             }else{
                 Toast.makeText(HandymanApp.getAppContext(),"No reviews", Toast.LENGTH_LONG).show()
             }

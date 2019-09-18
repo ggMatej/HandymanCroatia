@@ -14,6 +14,8 @@ import hr.ferit.matejmijic.handymancroatia.ui.home.normalAcc.viewpager.Container
 import kotlinx.android.synthetic.main.fragment_front_page.*
 
 const val EXTRA_USER_ID = "extra_task_id"
+const val EXTRA_REVIEW_TITLE = "extra_review_title"
+const val EXTRA_REVIEW_TEXT = "extra_review_text"
 
 class FrontPageFragment: BaseFragment() {
     private lateinit var  auth: FirebaseAuth
