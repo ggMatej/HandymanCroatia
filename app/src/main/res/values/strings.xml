@@ -55,11 +55,43 @@
     <string name="grade_prompt">Choose a grade</string>
     <string name="post_review">Post review</string>
     <string name="reviews">Reviews:</string>
+    <string name="search">Search</string>
     <string-array name="grades">
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
         <item>5</item>
+    </string-array>
+
+    <string-array name="jobs">
+        <item>Administrative professions</item>
+        <item>Architecture</item>
+        <item>Banking</item>
+        <item>Finances and accounting</item>
+        <item>Electrical engineering</item>
+        <item>Design</item>
+        <item>Construction</item>
+        <item>Installations, maintenance and repairs</item>
+        <item>Tellecommunications</item>
+        <item>Management</item>
+        <item>Forestry</item>
+        <item>Security and protection</item>
+        <item>Transportation</item>
+        <item>Taxi services</item>
+    </string-array>
+
+    <string-array name="places">
+        <item>Zagrebačka županija</item>
+        <item>Karlovačka županija</item>
+        <item>Varaždinska županija</item>
+        <item>Osječko-baranjska županija</item>
+        <item>Primorsko-goranska županija</item>
+        <item>Požeško-slavonska županija</item>
+        <item>Splitsko-dalmatinska županija</item>
+        <item>Istarska županija</item>
+        <item>Grad Zagreb</item>
+        <item>Nedefinirano</item>
+
     </string-array>
 </resources>
